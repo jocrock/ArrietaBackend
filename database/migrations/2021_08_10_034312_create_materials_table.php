@@ -21,7 +21,7 @@ class CreateMaterialsTable extends Migration
             $table->string('descripcion');
             $table->date('fechapublicacion');
             $table->foreign('idcurso','materials_idcurso_foerign')
-            ->references('id')->on('cursos');
+            ->references('id')->on('cursos')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('idtema','materials_idtema_foerign')
             ->references('id')->on('temas');
             $table->timestamps();
