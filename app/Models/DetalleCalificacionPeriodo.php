@@ -7,5 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class DetalleCalificacionPeriodo extends Model
 {
-    use HasFactory;
+    public $table="detalle_calificacion_periodos";
+    protected $fillable=[
+        'periodo_calificacion_id',
+        'valoracion_id',
+        'puntaje'
+    ];
+    public $timestamsp=false;
+    public function periodoCalificacion()
+    {
+        return $this->belongsTo('App\Models\PeriodoCalificacion','periodo_calificacion_id','id');
+    }
+    public function valoracion()
+    {
+        return $this->belongsTo('App\Models\Valoracion','valoracion_id','id');
+    }
+    public function entregaTarea()
+    {
+        return $this->hasManny('App\Models\EntregaTarea','detalle_calificacion_periodo_id','id');
+    }
 }

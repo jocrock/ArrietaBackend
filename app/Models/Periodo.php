@@ -7,5 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Periodo extends Model
 {
-    use HasFactory;
+    public $table="periodos";
+    protected $fillable=[
+        'nombre',
+        'descripcion',
+        'fechainicio',
+        'fechafin',
+        'gestion'
+    ];
+    public $timestamsp=false;
+    
+    public function periodoCalificacion()
+    {
+        return $this->hasManny('App\Models\PeriodoCalificacion','periodo_id','id');
+    }
+
+    
 }

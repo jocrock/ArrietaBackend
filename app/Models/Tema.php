@@ -7,5 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tema extends Model
 {
-    use HasFactory;
+    public $table="temas";
+    protected $fillable=[
+        'curso_id',
+        'titulo',
+        'descripcion'
+    ];
+    public $timestamsp=false;
+    public function curso()
+    {
+        return $this->belongsTo('App\Models\Curso','curso_id','id');
+    }
+    public function material()
+    {
+        return $this->hasManny('App\Models\Material','tema_id','id');
+    }
 }

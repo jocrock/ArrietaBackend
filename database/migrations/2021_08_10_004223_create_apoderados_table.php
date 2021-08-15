@@ -16,8 +16,8 @@ class CreateApoderadosTable extends Migration
         Schema::create('apoderados', function (Blueprint $table) {
             $table->id();
             $table->string('direccion', 100);			
-            $table->unsignedBigInteger('idusuario');
-            $table->foreign('idusuario','apoderados_idusuario_foerign')
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id','apoderados_idusuario_foerign')
             ->references('id')->on('users');
             $table->timestamps();
         });

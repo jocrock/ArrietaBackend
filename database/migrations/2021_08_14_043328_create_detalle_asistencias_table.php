@@ -15,11 +15,11 @@ class CreateDetalleAsistenciasTable extends Migration
     {
         Schema::create('detalle_asistencias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idasistencia');
+            $table->unsignedBigInteger('asistencia_id');
             $table->date('fecha');
             $table->enum('detalle',['Asistio','Retraso','Licencia','Falta']);
             $table->string('puntaje',250)->nullable();
-            $table->foreign('idasistencia','detalle_asistencias_idasistencia_foerign')
+            $table->foreign('asistencia_id','detalle_asistencias_idasistencia_foerign')
             ->references('id')->on('asistencias')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

@@ -15,10 +15,10 @@ class CreateTemasTable extends Migration
     {
         Schema::create('temas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idcurso');
+            $table->unsignedBigInteger('curso_id');
             $table->string('titulo', 200);
             $table->string('descripcion');
-            $table->foreign('idcurso','cursos_idcurso_foerign')
+            $table->foreign('curso_id','cursos_curso_id_foerign')
             ->references('id')->on('cursos');
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ class CreateTemasTable extends Migration
     {
         Schema::dropIfExists('temas');
         Schema::table('temas', function (Blueprint $table) {
-            $table->dropForeign('cursos_idcurso_foerign');});
+            $table->dropForeign('cursos_curso_id_foerign');});
     }
 }

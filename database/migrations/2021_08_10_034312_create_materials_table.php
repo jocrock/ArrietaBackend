@@ -15,14 +15,14 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idcurso');
-            $table->unsignedBigInteger('idtema');
+            $table->unsignedBigInteger('curso_id');
+            $table->unsignedBigInteger('tema_id');
             $table->string('titulo', 200);
             $table->string('descripcion');
             $table->date('fechapublicacion');
-            $table->foreign('idcurso','materials_idcurso_foerign')
+            $table->foreign('curso_id','materials_curso_id_foerign')
             ->references('id')->on('cursos')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('idtema','materials_idtema_foerign')
+            $table->foreign('tema_id','materials_tema_id_foerign')
             ->references('id')->on('temas');
             $table->timestamps();
         });
@@ -37,8 +37,8 @@ class CreateMaterialsTable extends Migration
     {
         Schema::dropIfExists('materials');
         Schema::table('materials', function (Blueprint $table) {
-            $table->dropForeign('materials_idtema_foerign');});
+            $table->dropForeign('materials_tema_id_foerign');});
         Schema::table('materials', function (Blueprint $table) {
-            $table->dropForeign('materials_idcurso_foerign');});
+            $table->dropForeign('materials_curso_id_foerign');});
     }
 }

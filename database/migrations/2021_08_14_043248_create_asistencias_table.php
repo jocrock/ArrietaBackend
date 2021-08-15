@@ -15,13 +15,13 @@ class CreateAsistenciasTable extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idcalificacion');
+            $table->unsignedBigInteger('calificacion_id');
             $table->integer('asistio');
             $table->integer('faltas');
             $table->integer('retrasos');
             $table->integer('licencias');
             $table->integer('dias_trabajados');
-            $table->foreign('idcalificacion','asistencias_idcalificacion_foerign')
+            $table->foreign('calificacion_id','asistencias_idcalificacion_foerign')
             ->references('id')->on('calificacions')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

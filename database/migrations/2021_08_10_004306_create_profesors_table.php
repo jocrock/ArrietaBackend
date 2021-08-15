@@ -15,11 +15,11 @@ class CreateProfesorsTable extends Migration
     {
         Schema::create('profesors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idusuario');
+            $table->unsignedBigInteger('user_id');
             $table->string('especialidad', 200)->nullable();
             $table->integer('horasacademicas');
 			$table->date('fechaingreso')->nullable();
-            $table->foreign('idusuario','profesors_idusuario_foerign')
+            $table->foreign('user_id','profesors_idusuario_foerign')
             ->references('id')->on('users');
             $table->timestamps();
         });

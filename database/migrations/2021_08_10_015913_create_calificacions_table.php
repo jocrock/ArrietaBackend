@@ -15,16 +15,16 @@ class CreateCalificacionsTable extends Migration
     {
         Schema::create('calificacions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idcurso');
-            $table->unsignedBigInteger('idestudiante');
+            $table->unsignedBigInteger('curso_id');
+            $table->unsignedBigInteger('estudiante_id');
             $table->enum('rango',['ED','DA','DO','DP'])->nullable();
             $table->double('puntaje', 8, 2)->nullable();
             $table->enum('situacion',['APROBADO','REPROBADO'])->nullable();
-            $table->foreign('idcurso','calificacions_idcurso_foerign')
+            $table->foreign('curso_id','calificacions_idcurso_foerign')
             ->references('id')->on('cursos');
 
             
-            $table->foreign('idestudiante','calificacions_idestudiante_foerign')
+            $table->foreign('estudiante_id','calificacions_idestudiante_foerign')
             ->references('id')->on('estudiantes');
 
             $table->timestamps();

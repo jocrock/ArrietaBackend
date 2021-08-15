@@ -15,12 +15,12 @@ class CreateArchivosMaterialsTable extends Migration
     {
         Schema::create('archivos_materials', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idmaterial');
+            $table->unsignedBigInteger('material_id');
             $table->string('nombre', 200);
             $table->string('link',200);
             $table->string('extencion',10);
             $table->string('descripcion',250);
-            $table->foreign('idmaterial','archivos_materials_idmaterial_foerign')
+            $table->foreign('material_id','archivos_materials_idmaterial_foerign')
             ->references('id')->on('materials')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

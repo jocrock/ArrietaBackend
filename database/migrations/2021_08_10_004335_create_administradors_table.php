@@ -15,10 +15,10 @@ class CreateAdministradorsTable extends Migration
     {
         Schema::create('administradors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idusuario');
+            $table->unsignedBigInteger('user_id');
             $table->string('cargo', 200)->nullable();
 			$table->date('fechaingreso')->nullable();
-            $table->foreign('idusuario','administradors_idusuario_foerign')
+            $table->foreign('user_id','administradors_idusuario_foerign')
             ->references('id')->on('users');
             $table->timestamps();
         });

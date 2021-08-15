@@ -15,11 +15,11 @@ class CreateJustificacionsTable extends Migration
     {
         Schema::create('justificacions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('iddetalle_asistencia');
+            $table->unsignedBigInteger('detalle_asistencia_id');
             $table->string('nombre',50);
             $table->string('descripcion',250);
             $table->string('link',100);
-            $table->foreign('iddetalle_asistencia','justificacion_iddetalle_asistencia_foerign')
+            $table->foreign('detalle_asistencia_id','justificacion_iddetalle_asistencia_foerign')
             ->references('id')->on('detalle_asistencias')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

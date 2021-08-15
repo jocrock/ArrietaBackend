@@ -14,13 +14,14 @@ class CreateEstudiantesTable extends Migration
     public function up()
     {
         Schema::create('estudiantes', function (Blueprint $table) {
-            $table->id();
-            $table->string('rude', 20);			
-            $table->unsignedBigInteger('idusuario');
-			$table->unsignedBigInteger('idapoderado');
-            $table->foreign('idusuario','estudiantes_idusuario_foerign')
+            $table->id();		
+            $table->unsignedBigInteger('user_id');
+			$table->unsignedBigInteger('apoderado_id');
+            $table->string('rude', 20);	
+            $table->enum('estado',['INSCRITO','RETIRADO','PASIVO','EXPULSADO','NO INSCRITO','TRANSFERENCIA']);
+            $table->foreign('user_id','estudiantes_idusuario_foerign')
             ->references('id')->on('users');
-            $table->foreign('idapoderado','estudiantes_idapoderado_foerign')
+            $table->foreign('apoderado_id','estudiantes_idapoderado_foerign')
             ->references('id')->on('apoderados');
             $table->timestamps();
         });
