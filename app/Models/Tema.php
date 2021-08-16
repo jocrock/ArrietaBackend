@@ -20,6 +20,6 @@ class Tema extends Model
     }
     public function material()
     {
-        return $this->hasManny('App\Models\Material','tema_id','id');
+        return $this->hasMany('App\Models\Material','tema_id','id');
     }
 }

@@ -22,7 +22,7 @@ class Curso extends Model
     }
     public function calificacion()
     {
-        return $this->hasManny('App\Models\Calificacion','curso_id','id');
+        return $this->hasMany('App\Models\Calificacion','curso_id','id');
     }
     public function materia()
     {
@@ -30,14 +30,14 @@ class Curso extends Model
     }
     public function tema()
     {
-        return $this->hasManny('App\Models\Tema','curso_id','id');
+        return $this->hasMany('App\Models\Tema','curso_id','id');
     }
     public function material()
     {
-        return $this->hasManny('App\Models\Material','curso_id','id');
+        return $this->hasMany('App\Models\Material','curso_id','id');
     }
     public function tarea()
     {
-        return $this->hasManny('App\Models\Tarea','curso_id','id');
+        return $this->hasMany('App\Models\Tarea','curso_id','id');
     }
 }

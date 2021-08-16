@@ -19,7 +19,7 @@ class Periodo extends Model
     
     public function periodoCalificacion()
     {
-        return $this->hasManny('App\Models\PeriodoCalificacion','periodo_id','id');
+        return $this->hasMany('App\Models\PeriodoCalificacion','periodo_id','id');
     }
 
     

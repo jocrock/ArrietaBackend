@@ -19,6 +19,6 @@ class Apoderado extends Model
     }
     public function estudiante()
     {
-        return $this->hasManny('App\Models\Estudiante','apoderado_id','id');
+        return $this->hasMany('App\Models\Estudiante','apoderado_id','id');
     }
 }

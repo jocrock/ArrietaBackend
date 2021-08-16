@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Materia;
 
 class MateriaSeeder extends Seeder
 {
@@ -13,6 +14,17 @@ class MateriaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Materia::create([
+            'area'=>'Tecnica Tecnologica', 
+            'descripcion'=>'Programacion I', 
+            'nivel'=>'SECUNDARIA',
+            'escolaridad'=>1
+           ]);
+        Materia::create([
+        'area'=>'Tecnica Tecnologica', 
+        'descripcion'=>'Programacion II', 
+        'nivel'=>'SECUNDARIA',
+        'escolaridad'=>2
+        ]);
     }
 }

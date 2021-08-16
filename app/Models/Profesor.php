@@ -21,7 +21,7 @@ class Profesor extends Model
     }
     public function curso()
     {
-        return $this->hasManny('App\Models\Curso','curso_id','id');
+        return $this->hasMany('App\Models\Curso','curso_id','id');
     }
     
 }

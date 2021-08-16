@@ -26,6 +26,6 @@ class PeriodoCalificacion extends Model
     }
     public function detalleCalificacionPeriodo()
     {
-        return $this->hasManny('App\Models\DetalleCalificacionPeriodo','periodo_calificacion_id','id');
+        return $this->hasMany('App\Models\DetalleCalificacionPeriodo','periodo_calificacion_id','id');
     }
 }

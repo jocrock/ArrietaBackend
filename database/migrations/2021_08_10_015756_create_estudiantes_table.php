@@ -17,7 +17,7 @@ class CreateEstudiantesTable extends Migration
             $table->id();		
             $table->unsignedBigInteger('user_id');
 			$table->unsignedBigInteger('apoderado_id');
-            $table->string('rude', 20);	
+            $table->string('rude', 20)->unique();	
             $table->enum('estado',['INSCRITO','RETIRADO','PASIVO','EXPULSADO','NO INSCRITO','TRANSFERENCIA']);
             $table->foreign('user_id','estudiantes_idusuario_foerign')
             ->references('id')->on('users');

@@ -25,6 +25,6 @@ class Estudiante extends Model
     }
     public function calificacion()
     {
-        return $this->hasManny('App\Models\Calificacion','estudiante_id','id');
+        return $this->hasMany('App\Models\Calificacion','estudiante_id','id');
     }
 }

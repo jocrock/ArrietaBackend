@@ -24,6 +24,6 @@ class DetalleCalificacionPeriodo extends Model
     }
     public function entregaTarea()
     {
-        return $this->hasManny('App\Models\EntregaTarea','detalle_calificacion_periodo_id','id');
+        return $this->hasMany('App\Models\EntregaTarea','detalle_calificacion_periodo_id','id');
     }
 }

@@ -28,6 +28,6 @@ class EntregaTarea extends Model
     }
     public function archivoAdjuntoEntregaTarea()
     {
-        return $this->hasManny('App\Models\ArchivoAdjuntoEntregaTarea','entrega_tarea_id','id');
+        return $this->hasMany('App\Models\ArchivoAdjuntoEntregaTarea','entrega_tarea_id','id');
     }
 }

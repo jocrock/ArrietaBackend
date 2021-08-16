@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('telefono', 10);
             $table->string('fotografia', 50)->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password',50);
+            $table->string('password',100);
             $table->enum('tipo',['ESTUDIANTE','PROFESOR','ADMINISTRADOR','APODERADO','INVITADO'])->default('INVITADO');
             $table->enum('genero',['VARON','MUJER','OTRO'])->default('VARON');
             $table->rememberToken();

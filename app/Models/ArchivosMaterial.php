@@ -19,6 +19,6 @@ class ArchivosMaterial extends Model
     
     public function material()
     {
-        return $this->hasManny('App\Models\Material','material_id','id');
+        return $this->hasMany('App\Models\Material','material_id','id');
     }
 }

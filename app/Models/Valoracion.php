@@ -15,10 +15,10 @@ class Valoracion extends Model
     public $timestamsp=false;
     public function detalleCalificacionPeriodo()
     {
-        return $this->hasManny('App\Models\DetalleCalificacionPeriodo','valoracion_id','id');
+        return $this->hasMany('App\Models\DetalleCalificacionPeriodo','valoracion_id','id');
     }
     public function tarea()
     {
-        return $this->hasManny('App\Models\Tarea','valoracion_id','id');
+        return $this->hasMany('App\Models\Tarea','valoracion_id','id');
     }
 }

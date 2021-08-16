@@ -23,6 +23,6 @@ class Asistencia extends Model
     }
     public function detalleAsistencia()
     {
-        return $this->hasManny('App\Models\DetalleAsistencia','asistencia_id','id');
+        return $this->hasMany('App\Models\DetalleAsistencia','asistencia_id','id');
     }
 }

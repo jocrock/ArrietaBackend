@@ -27,6 +27,6 @@ class Tarea extends Model
     }
     public function entregaTarea()
     {
-        return $this->hasManny('App\Models\EntregaTarea','tarea_id','id');
+        return $this->hasMany('App\Models\EntregaTarea','tarea_id','id');
     }
 }
